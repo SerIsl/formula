@@ -51,6 +51,52 @@ Sub getName
 	End If
 End Sub
 
+Function Dimension
+	Dim a, koli, b, koli_tipi, c
+	
+	koli = Split(Format.BaseName, "_")
+	
+	If fModel = "Gerek Yok!" Then
+		c = koli(0)
+	Else
+		c = fModel
+	End If
+
+	If IsNumeric(Mid(c, 3, 1)) Then
+		a = Mid(c, 3, 1)
+	End If
+	
+	 
+	
+	koli_tipi = Split(koli(UBound(koli)), "-")(1)
+
+	If koli_tipi = "SHIRINK" Then
+		Select Case a
+			Case 4
+				b = "545x695x880"
+			Case 5
+				b = "545x695x880"
+			case 6 
+				b = "645x695x880"
+			case 9 
+				b = "950x680x890"
+		End Select 
+	Else
+		Select Case a
+			Case 4
+				b = "515x610x883"
+			Case 5
+				b = "515x670x883"
+			case 6 
+				b = "615x670x883"
+		End Select 
+	End If 
+
+	
+
+	Dimension = b
+End Function
+
 Sub getName1
 	Dim x
 
@@ -60,7 +106,7 @@ Sub getName1
 	Value = x(0)
 	fModel = x(1)
 	EAN = x(Ubound(x)-1)
-		If Ubound(x)=5 Then
+		If Ubound(x)=5 OR Ubound(x)=4 Then
 			Code = x(Ubound(x)-2)
 		End If
 	ElseIf Ubound(x)=3 AND IsNumeric(x(Ubound(x)-1)) AND Len(x(Ubound(x)-1))>11 OR Ubound(x)=2 Then 
@@ -72,6 +118,8 @@ Sub getName1
 	fModel = x(1)
 	Value = x(0)
 	End If
+
+    Dimen = Dimension
 End Sub
 
 
