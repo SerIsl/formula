@@ -70,7 +70,7 @@ Function Dimension
 	
 	koli_tipi = Split(koli(UBound(koli)), "-")(1)
 
-	If koli_tipi = "SHIRINK" Then
+	If koli_tipi = "SHRINK" Then
 		Select Case a
 			Case 4
 				b = "545x695x880"
