@@ -81,7 +81,9 @@ Function Dimension
 			case 9 
 				b = "950x680x890"
 		End Select 
-	Else
+
+	ElseIf koli_tipi = "ABOX" Then
+
 		Select Case a
 			Case 4
 				b = "515x610x883"
@@ -89,6 +91,8 @@ Function Dimension
 				b = "515x670x883"
 			case 6 
 				b = "615x670x883"
+            case 9
+                b = "905*650*810"
 		End Select 
 	End If 
 
