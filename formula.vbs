@@ -76,7 +76,7 @@ Function Dimension(x)
             If koli_tipi = "SHRINK" Then
                 Select Case a
                     Case 4
-                        b = "545x695x880"
+                        b = "540x670x880"
                     Case 5
                         b = "545x695x880"
                     case 6 
