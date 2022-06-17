@@ -67,6 +67,10 @@ Function Dimension(x)
 	End If
 	
     d = Mid(c, 1, 1)
+
+    If d = "V" Or d = "D" Then
+        d = "F"
+    End If
 	 
 	
 	koli_tipi = Split(koli(UBound(koli)), "-")(1)
