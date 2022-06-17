@@ -51,15 +51,15 @@ Sub getName
 	End If
 End Sub
 
-Function Dimension
+Function Dimension(x)
 	Dim a, koli, b, koli_tipi, c
 	
 	koli = Split(Format.BaseName, "_")
 	
-	If fModel = "Gerek Yok!" Then
+	If x = "Gerek Yok!" Then
 		c = koli(0)
 	Else
-		c = fModel
+		c = x
 	End If
 
 	If IsNumeric(Mid(c, 3, 1)) Then
@@ -98,7 +98,7 @@ Function Dimension
 
 	
 
-	Dimension = b
+	Value = b
 End Function
 
 Sub getName1
@@ -123,7 +123,7 @@ Sub getName1
 	Value = x(0)
 	End If
 
-    Dimen = Dimension
+    
 End Sub
 
 
