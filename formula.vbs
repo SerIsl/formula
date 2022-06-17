@@ -52,7 +52,7 @@ Sub getName
 End Sub
 
 Function Dimension(x)
-	Dim a, koli, b, koli_tipi, c
+	Dim a, koli, b, koli_tipi, c, d
 	
 	koli = Split(Format.BaseName, "_")
 	
@@ -66,36 +66,56 @@ Function Dimension(x)
 		a = Mid(c, 3, 1)
 	End If
 	
+    d = Mid(c, 1, 1)
 	 
 	
 	koli_tipi = Split(koli(UBound(koli)), "-")(1)
 
-	If koli_tipi = "SHRINK" Then
-		Select Case a
-			Case 4
-				b = "545x695x880"
-			Case 5
-				b = "545x695x880"
-			case 6 
-				b = "645x695x880"
-			case 9 
-				b = "950x680x890"
-		End Select 
+    Select Case d
+        case "F"
+            If koli_tipi = "SHRINK" Then
+                Select Case a
+                    Case 4
+                        b = "545x695x880"
+                    Case 5
+                        b = "545x695x880"
+                    case 6 
+                        b = "645x695x880"
+                    case 9 
+                        b = "950x680x890"
+                End Select 
 
-	ElseIf koli_tipi = "ABOX" Then
+            ElseIf koli_tipi = "ABOX" Then
 
-		Select Case a
-			Case 4
-				b = "515x610x883"
-			Case 5
-				b = "515x670x883"
-			case 6 
-				b = "615x670x883"
-            case 9
-                b = "905*650*810"
-		End Select 
-	End If 
-
+                Select Case a
+                    Case 4
+                        b = "515x610x883"
+                    Case 5
+                        b = "515x670x883"
+                    case 6 
+                        b = "615x670x883"
+                    case 9
+                        b = "905*650*810"
+                End Select 
+            End If
+        case "H"
+            If koli_tipi = "MOON" Then
+                Select Case a
+                    case 3
+                        b = "365x570x155"
+                    case 6
+                        b = "635x570x155"
+                    case 7
+                        b = "795x570x155"
+                    case 9
+                        b = "915x570x155"
+                End Select
+            ElseIf koli_tipi = "STANDART" Then
+                b = "640x595x130"
+            End If 
+        case "B"
+            b = "632x654x634"
+    End Select
 	
 
 	Value = b
