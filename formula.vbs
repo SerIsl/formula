@@ -142,9 +142,12 @@ Sub getName1
 	EAN = x(Ubound(x)-1)
 		If Ubound(x)=5 Then
 			Code = x(Ubound(x)-2)
+        ElseIf Ubound(x) = 4 AND Len(fModel) = 10 Then
+            Code = x(Ubound(x)-2)
+            
         ElseIf Ubound(x) = 4 Then
             Code = x(Ubound(x)-2)
-            fModel = "Gerek Yok!"
+            fModel = "Gerek Yok!"         
 		End If
 	ElseIf Ubound(x)=3 AND IsNumeric(x(Ubound(x)-1)) AND Len(x(Ubound(x)-1))>11 OR Ubound(x)=2 Then 
 	Value = x(0)
