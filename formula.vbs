@@ -51,15 +51,21 @@ Sub getName
 	End If
 End Sub
 
-Function Dimension(x)
+Function Dimension(X)
 	Dim a, koli, b, koli_tipi, c, d
 	
 	koli = Split(Format.BaseName, "_")
+
+    'If x = 0 Then
+
+    '   fModel = "Gerek Yok!"
+
+    'End If
 	
-	If x = "Gerek Yok!" Then
-		c = koli(0)
+	If X = "Gerek Yok!" Then
+		c = koli(0) 
 	Else
-		c = x
+		c = fModel
 	End If
 
 	If IsNumeric(Mid(c, 3, 1)) Then
@@ -134,8 +140,11 @@ Sub getName1
 	Value = x(0)
 	fModel = x(1)
 	EAN = x(Ubound(x)-1)
-		If Ubound(x)=5 OR Ubound(x)=4 Then
+		If Ubound(x)=5 Then
 			Code = x(Ubound(x)-2)
+        ElseIf Ubound(x) = 4 Then
+            Code = x(Ubound(x)-2)
+            fModel = "Gerek Yok!"
 		End If
 	ElseIf Ubound(x)=3 AND IsNumeric(x(Ubound(x)-1)) AND Len(x(Ubound(x)-1))>11 OR Ubound(x)=2 Then 
 	Value = x(0)
