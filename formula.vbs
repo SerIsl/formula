@@ -11,6 +11,57 @@ End Function
 ' ==========================================
 ' Stringten belirli formatta sayi almak
 ' ==========================================
+Function EAN(x)
+	Dim EANe, tB, cB, index, myA(12)
+	tB = 0
+	cB = 0 
+	index = 1
+	EANe = x
+
+	If len(EANe)>13 Then 
+		MsgBox("Girmis oldugunuz Ean 13 Haneden fazla")
+		Exit Function
+	ElseIf len(EANe)<13 Then
+		MsgBox("Girmis oldugunuz Ean 13 Haneden az")
+		Exit Function
+	End If
+
+
+	For i = 0 to 12
+		myA(i) = Mid(EANe, i+1, 1)
+	Next
+
+
+
+	For Each number in myA
+
+		If index > 12 Then 
+			Exit For
+		End If
+		
+		If index Mod 2 = 0 Then
+
+			cB = cB + CInt(number)
+			
+		Else 
+			tB = tB + CInt(number)
+			
+		End If
+
+		index = index + 1 
+		
+	Next
+
+	a = (cB*3+tb) Mod 10
+
+	If a + CInt(myA(12)) = 10 Then 
+	EAN = True
+	Else
+	EAN = False
+
+	End If
+
+End Function
 
 Function getNum(num1)
 
@@ -157,7 +208,7 @@ Sub getName1
             Code = x(Ubound(x)-2)
             fModel = "Gerek Yok!"         
 		End If
-	ElseIf Ubound(x)=3 AND IsNumeric(x(Ubound(x)-1)) AND Len(x(Ubound(x)-1))>11 OR Ubound(x)=2 Then 
+	ElseIf Ubound(x)=3 AND IsNumeric(x(Ubound(x)-1)) AND EAN(x(Ubound(x)-1)) OR Ubound(x)=2 Then 
 	Value = x(0)
 	fModel = "Gerek Yok!"
 	EAN = x(Ubound(x)-1)
