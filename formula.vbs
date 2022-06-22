@@ -200,22 +200,22 @@ End Sub
 
 Sub libertyName
 
-Dim x
+    Dim x
 
-x=Split(Format.BaseName,"_")
+    x=Split(Format.BaseName,"_")
 
-If InStr(x(0), "-")>0 Then
-fModel = x(1)
-Value = x(0)
-EAN = x(Ubound(x)-1) 
-ElseIf Ubound(x)>2 AND InStr(x(0), "-")=0 Then 
-Value = StrReverse(Replace(StrReverse(x(0)), " ", "-",1,1))
-fModel =x(1)
-EAN = x(Ubound(x)-1)
-Else
-fModel ="Gerek Yok!"
-Value = x(0)
-End If
+    If InStr(x(0), "-")>0 Then
+    fModel = x(1)
+    Value = x(0)
+    EAN = x(Ubound(x)-1) 
+    ElseIf Ubound(x)>2 AND InStr(x(0), "-")=0 Then 
+    Value = StrReverse(Replace(StrReverse(x(0)), " ", "-",1,1))
+    fModel =x(1)
+    EAN = x(Ubound(x)-1)
+    Else
+    fModel ="Gerek Yok!"
+    Value = x(0)
+    End If
 
 End Sub
 
@@ -237,14 +237,14 @@ End Sub
 
 
 Function range(x , y)
-Dim arr(), i
-Redim arr(y-1-x)
+    Dim arr(), i
+    Redim arr(y-1-x)
 
-For i = 0 to y-1-x
-arr(i) = x
-x = x + 1
-Next
-range = arr
+    For i = 0 to y-1-x
+    arr(i) = x
+    x = x + 1
+    Next
+    range = arr
 End Function
 
 Function LenA(x)   
