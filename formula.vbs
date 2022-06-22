@@ -150,7 +150,7 @@ Sub getName1
 	EAN = x(Ubound(x)-1)
 		If Ubound(x)=5 Then
 			Code = x(Ubound(x)-2)
-        ElseIf Ubound(x) = 4 AND Len(Trim(fModel)) = 10 Then
+        ElseIf Ubound(x) = 4 AND (Len(Trim(fModel)) = 10 OR Len(Trim(fModel)) = 8) Then
             Code = x(Ubound(x)-2)
             
         ElseIf Ubound(x) = 4 Then
