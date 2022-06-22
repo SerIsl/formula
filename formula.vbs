@@ -11,7 +11,7 @@ End Function
 ' ==========================================
 ' Stringten belirli formatta sayi almak
 ' ==========================================
-Function EAN(x)
+Function EAN_kontrol(x)
 	Dim EANe, tB, cB, index, myA(12)
 	tB = 0
 	cB = 0 
@@ -55,9 +55,9 @@ Function EAN(x)
 	a = (cB*3+tb) Mod 10
 
 	If a + CInt(myA(12)) = 10 Then 
-	EAN = True
+	EAN_kontrol = True
 	Else
-	EAN = False
+	EAN_kontrol = False
 
 	End If
 
@@ -208,7 +208,7 @@ Sub getName1
             Code = x(Ubound(x)-2)
             fModel = "Gerek Yok!"         
 		End If
-	ElseIf Ubound(x)=3 AND IsNumeric(x(Ubound(x)-1)) AND EAN(x(Ubound(x)-1)) OR Ubound(x)=2 Then 
+	ElseIf Ubound(x)=3 AND IsNumeric(x(Ubound(x)-1)) AND EAN_kontrol(x(Ubound(x)-1)) OR Ubound(x)=2 Then 
 	Value = x(0)
 	fModel = "Gerek Yok!"
 	EAN = x(Ubound(x)-1)
