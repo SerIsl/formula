@@ -82,8 +82,10 @@ Function Dimension(X)
 	koli_tipi = Split(koli(UBound(koli)), "-")(1)
 
     Select Case d
+
         case "F"
             If koli_tipi = "SHRINK" Then
+
                 Select Case a
                     Case 4
                         b = "540x670x880"
@@ -107,9 +109,13 @@ Function Dimension(X)
                     case 9
                         b = "905*650*810"
                 End Select 
+
             End If
+
         case "H"
+
             If koli_tipi = "MOON" Then
+
                 Select Case a
                     case 3
                         b = "365x570x155"
@@ -120,9 +126,11 @@ Function Dimension(X)
                     case 9
                         b = "915x570x155"
                 End Select
+
             ElseIf koli_tipi = "STANDART" Then
                 b = "640x595x130"
             End If 
+            
         case "B"
             b = "632x654x634"
     End Select
