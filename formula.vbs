@@ -65,7 +65,7 @@ Function Dimension(X)
 	If X = "Gerek Yok!" Then
 		c = koli(0) 
 	Else
-		c = fModel
+		c = Trim(x)
 	End If
 
 	If IsNumeric(Mid(c, 3, 1)) Then
@@ -142,7 +142,7 @@ Sub getName1
 	EAN = x(Ubound(x)-1)
 		If Ubound(x)=5 Then
 			Code = x(Ubound(x)-2)
-        ElseIf Ubound(x) = 4 AND Len(fModel) = 10 Then
+        ElseIf Ubound(x) = 4 AND Len(Trim(fModel)) = 10 Then
             Code = x(Ubound(x)-2)
             
         ElseIf Ubound(x) = 4 Then
