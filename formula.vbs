@@ -19,10 +19,10 @@ Function EAN_kontrol(x)
 	EANe = x
 
 	If len(EANe)>13 Then 
-		MsgBox("Girmis oldugunuz Ean 13 Haneden fazla")
+		'MsgBox("Girmis oldugunuz Ean 13 Haneden fazla")
 		Exit Function
 	ElseIf len(EANe)<13 Then
-		MsgBox("Girmis oldugunuz Ean 13 Haneden az")
+		'MsgBox("Girmis oldugunuz Ean 13 Haneden az")
 		Exit Function
 	End If
 
@@ -201,7 +201,7 @@ Sub getName1
 	EAN = x(Ubound(x)-1)
 		If Ubound(x)=5 Then
 			Code = x(Ubound(x)-2)
-        ElseIf Ubound(x) = 4 AND (Len(Trim(fModel)) = 10 OR Len(Trim(fModel)) = 8) Then
+        ElseIf Ubound(x) = 4 AND (Len(Trim(fModel)) = 10 OR Len(Trim(fModel)) = 8 Or Mid(Trim(fModel),1,1) = "H") Then
             Code = x(Ubound(x)-2)
             
         ElseIf Ubound(x) = 4 Then
