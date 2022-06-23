@@ -52,9 +52,9 @@ Function EAN_kontrol(x)
 		
 	Next
 
-	a = (cB*3+tb) Mod 10
+	a = ((cB*3+tb) Mod 10) + CInt(myA(12))
 
-	If a + CInt(myA(12)) = 10 Then 
+	If (a Mod 10) = 0 Then 
 	EAN_kontrol = True
 	Else
 	EAN_kontrol = False
