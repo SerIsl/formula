@@ -12,54 +12,58 @@ End Function
 ' Stringten belirli formatta sayi almak
 ' ==========================================
 Function EAN_kontrol(x)
-	Dim EANe, tB, cB, index, myA(12)
-	tB = 0
-	cB = 0 
-	index = 1
-	EANe = x
+    If IsNumeric(x) Then
+        Dim EANe, tB, cB, index, myA(12)
+        tB = 0
+        cB = 0 
+        index = 1
+        EANe = x
 
-	If len(EANe)>13 Then 
-		'MsgBox("Girmis oldugunuz Ean 13 Haneden fazla")
-		Exit Function
-	ElseIf len(EANe)<13 Then
-		'MsgBox("Girmis oldugunuz Ean 13 Haneden az")
-		Exit Function
-	End If
-
-
-	For i = 0 to 12
-		myA(i) = Mid(EANe, i+1, 1)
-	Next
+        If len(EANe)>13 Then 
+            'MsgBox("Girmis oldugunuz Ean 13 Haneden fazla")
+            Exit Function
+        ElseIf len(EANe)<13 Then
+            'MsgBox("Girmis oldugunuz Ean 13 Haneden az")
+            Exit Function
+        End If
 
 
+        For i = 0 to 12
+            myA(i) = Mid(EANe, i+1, 1)
+        Next
 
-	For Each number in myA
 
-		If index > 12 Then 
-			Exit For
-		End If
-		
-		If index Mod 2 = 0 Then
 
-			cB = cB + CInt(number)
-			
-		Else 
-			tB = tB + CInt(number)
-			
-		End If
+        For Each number in myA
 
-		index = index + 1 
-		
-	Next
+            If index > 12 Then 
+                Exit For
+            End If
+            
+            If index Mod 2 = 0 Then
 
-	a = ((cB*3+tb) Mod 10) + CInt(myA(12))
+                cB = cB + CInt(number)
+                
+            Else 
+                tB = tB + CInt(number)
+                
+            End If
 
-	If (a Mod 10) = 0 Then 
-	EAN_kontrol = True
-	Else
-	EAN_kontrol = False
+            index = index + 1 
+            
+        Next
 
-	End If
+        a = ((cB*3+tb) Mod 10) + CInt(myA(12))
+
+        If (a Mod 10) = 0 Then 
+        EAN_kontrol = True
+        Else
+        EAN_kontrol = False
+
+        End If
+    Else
+        EAN_kontrol = False
+    End If
 
 End Function
 
@@ -208,7 +212,7 @@ Sub getName1
             Code = x(Ubound(x)-2)
             fModel = "Gerek Yok!"         
 		End If
-	ElseIf Ubound(x)=3 AND IsNumeric(x(Ubound(x)-1)) AND EAN_kontrol(x(Ubound(x)-1)) OR Ubound(x)=2 Then 
+	ElseIf Ubound(x)=3 AND EAN_kontrol(x(Ubound(x)-1)) OR Ubound(x)=2 Then 
 	Value = x(0)
 	fModel = "Gerek Yok!"
 	EAN = x(Ubound(x)-1)
