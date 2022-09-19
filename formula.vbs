@@ -874,3 +874,62 @@ a1 = Replace(a(1), ")", "")
 	End If
 
 End Sub
+
+Function parcalar(Deneme, eleman)
+	x = Split(Deneme, " ")(eleman)
+	If eleman = 1 Then 
+		z = Mid(x, 2, Len(x)-2)
+	ElseIf eleman = 0 Then
+		z = x
+	End If
+	y = Mid(z, 1, 1)
+
+	'Value = y
+
+	If (y = "F" or y = "V" or y = "D") and Len(z) = 10 Then
+		first = CInt(Mid(z, 3, 1))
+		If first = 6 Then
+			parcalar = "60x60"
+		ElseIf first = 5 Then
+			parcalar = "50x60"
+
+		ElseIf first = 9 Then
+			parcalar = "60x90"
+		Else
+			parcalar = "50x50"
+		End If	
+	Else
+		parcalar = ""
+	End If
+End Function
+
+Sub modeller(eleman)
+	s = ""
+	'MsgBox Len(veri3)
+	If Len(veri3) Then 
+		gelenVeri = veri1 &vbCr& veri2 &vbCr& veri3
+		'MsgBox gelenVeri
+	ElseIf Len(veri2) Then
+		gelenVeri = veri1 &vbCr& veri2
+	'MsgBox gelenVeri
+	Else
+		gelenVeri = veri1
+	End If
+	veriDizisi = Split(gelenVeri, VbCr)
+	
+
+	For Each veri In veriDizisi
+		If InStr(1, s, parcalar(veri, eleman))>0 Then
+			s = s & ""
+		Else
+			s = s & parcalar(veri, eleman) & "-"
+		End If
+	Next
+	
+	If Len(s) = 1 Then
+		Value = "Modeller Nerde Amk!"
+	Else
+		Value = Left(s, Len(s)-1) 
+	End If
+
+End Sub
