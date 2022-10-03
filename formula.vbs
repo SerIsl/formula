@@ -876,7 +876,7 @@ a1 = Replace(a(1), ")", "")
 End Sub
 
 Function parcalar(Deneme, eleman)
-	x = Split(Deneme, " ")(eleman)
+	x = Split(Deneme, " - ")(eleman)
 	If eleman = 1 Then 
 		z = Mid(x, 2, Len(x)-2)
 	ElseIf eleman = 0 Then
