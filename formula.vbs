@@ -136,6 +136,12 @@ Function Dimension(X)
 	
 	koli_tipi = Split(koli(UBound(koli)), "-")(1)
 
+    If koli_tipi = "CHARON" Then
+
+        koli_tipi = "MOON"
+
+    End If
+
     Select Case d
 
         case "F"
