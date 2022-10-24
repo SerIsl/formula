@@ -758,36 +758,68 @@ barkot = CInt(Right(barCode, 4))
 fark = SeriNoSon - adet
 serinoEsas = barkot + fark
 Select Case basamak
-case 4
-	If serinoEsas < 1000 And serinoEsas >99 Then
-	
-	Value = "0" & serinoEsas
 
-	ElseIf serinoEsas < 100 And serinoEsas > 9 Then
-	Value = "00" & serinoEsas
+    case 3
+        If serinoEsas < 100 And serinoEsas >9 Then
+        
+            Value = "0" & serinoEsas
 
-	ElseIf serinoEsas < 10 Then
-	Value = "000" & serinoEsas
-	Else
-	Value = serinoEsas
-	End If
+        ElseIf serinoEsas < 10 Then
+            Value = "00" & serinoEsas
+        Else
+            Value = serinoEsas
+        End If
+        
+    case 4
+        If serinoEsas < 1000 And serinoEsas >99 Then
+        
+            Value = "0" & serinoEsas
 
-case 5
-	If serinoEsas < 10000 And serinoEsas >999 Then
-	
-	Value = "0" & serinoEsas
-   ElseIf serinoEsas < 1000 And serinoEsas >99 Then
-	
-	Value = "00" & serinoEsas
+        ElseIf serinoEsas < 100 And serinoEsas > 9 Then
+            Value = "00" & serinoEsas
 
-	ElseIf serinoEsas < 100 And serinoEsas > 9 Then
-	Value = "000" & serinoEsas
+        ElseIf serinoEsas < 10 Then
+            Value = "000" & serinoEsas
+        Else
+            Value = serinoEsas
+        End If
 
-	ElseIf serinoEsas < 10 Then
-	Value = "0000" & serinoEsas
-	Else 
-	Value = serinoEsas
-	End If
+    case 5
+        If serinoEsas < 10000 And serinoEsas >999 Then
+        
+            Value = "0" & serinoEsas
+        ElseIf serinoEsas < 1000 And serinoEsas >99 Then
+        
+            Value = "00" & serinoEsas
+
+        ElseIf serinoEsas < 100 And serinoEsas > 9 Then
+            Value = "000" & serinoEsas
+
+        ElseIf serinoEsas < 10 Then
+            Value = "0000" & serinoEsas
+        Else 
+            Value = serinoEsas
+        End If
+    case 6
+        If serinoEsas < 100000 And serinoEsas >9999 Then
+        
+            Value = "0" & serinoEsas
+        ElseIf serinoEsas < 10000 And serinoEsas >999 Then
+        
+            Value = "00" & serinoEsas
+
+        ElseIf serinoEsas < 1000 And serinoEsas > 99 Then
+            Value = "000" & serinoEsas
+
+        ElseIf serinoEsas < 100 And serinoEsas > 9 Then
+            Value = "0000" & serinoEsas
+
+        ElseIf serinoEsas < 10 Then
+            Value = "00000" & serinoEsas
+
+        Else 
+            Value = serinoEsas
+        End If
 
 End Select
 
