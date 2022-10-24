@@ -800,6 +800,7 @@ Select Case basamak
         Else 
             Value = serinoEsas
         End If
+        
     case 6
         If serinoEsas < 100000 And serinoEsas >9999 Then
         
