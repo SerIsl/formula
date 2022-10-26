@@ -139,6 +139,10 @@ Function Dimension(X)
     If koli_tipi = "CHARON" Then
 
         koli_tipi = "MOON"
+    
+    ElseIf koli_tipi = "CARINO" Then
+
+        koli_tipi = "MOON"
 
     End If
 
