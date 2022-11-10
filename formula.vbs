@@ -937,7 +937,7 @@ Function parcalar(Deneme, eleman)
 			parcalar = "50x60"
 
 		ElseIf first = 9 Then
-			parcalar = "60x90"
+			parcalar = "90x60"
 		Else
 			parcalar = "50x50"
 		End If	
