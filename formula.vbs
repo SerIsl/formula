@@ -895,6 +895,8 @@ Sub firinolcusu2(modele)
 		Value = "60x60"
 	ElseIf CInt(Mid(modele, 3, 1)) = 5 Then
 		Value = "50x60"
+    ElseIf CInt(Mid(modele, 3, 1)) = 9 Then
+		Value = "90x60"
 	Else
 		Value = "50x50"
 	End If
