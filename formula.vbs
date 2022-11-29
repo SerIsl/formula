@@ -202,6 +202,7 @@ Function Dimension(X)
 	
 
 	Value = b
+    Dimension = b
 End Function
 
 Sub getName1
