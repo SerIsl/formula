@@ -979,3 +979,18 @@ Sub modeller(eleman)
 	End If
 
 End Sub
+
+Function arrayRev(array)
+	
+	Dim ArrayN(), a
+	a = uBound(array)
+	ReDim ArrayN(a)
+	
+	
+	For i = 0 To a
+		ArrayN(i) = array(a-i)
+	Next
+
+	arrayRev = ArrayN
+
+End Function
