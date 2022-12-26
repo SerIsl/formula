@@ -362,7 +362,7 @@ Function goster(dizi)
 End Function
 
 
-Sub WattTopla2
+Function WattTopla2
     Dim  a, result, c, d, MOWA
 
     result = 0
@@ -426,7 +426,9 @@ Sub WattTopla2
 
   Value = result & " W"
 
-End Sub
+  WattTopla2 = result
+
+End Function
 
 Function kWattTopla2 (x, y, z)
     Dim  a, result, c, d, e()
