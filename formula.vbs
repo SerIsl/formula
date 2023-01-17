@@ -834,7 +834,7 @@ End Select
 End Sub
 
 
-Sub ColorName
+Sub ColorName(x)
 
 Dim ColorCode, ColorName, fModel
 
@@ -842,7 +842,7 @@ ColorCode = Array("W", "B", "G", "K", "S", "M", "Y", "R", "C", "D", "P", "A", "V
 
 ColorName = Array("WHITE", "BLACK", "GREY (METALLIC)", "BROWN", "INOX BRIGHT", "INOX MATT", "GREEN", "RED", "BEIGE", "MATT BLACK", "PINK", "ANTRACIT", "BLUE", "WOODEN DESIGN","HALF INOX", "COOKTOP MATT BLACK", "COOKTOP BLACK", "COOKTOP MIRRORED BLACK", "BRIGHT BLACK", "LIGHT YELLOW", "YELLOW", "ORANGE", "TURQUAZ", "DARK RED", "BRIGHT RED", "OCEAN BLUE", "MATT ANTRACIT", "FULL INOX", "HALF INOX", "DARK BLUE", "BEIGE PAINT", "SILVER GREY PAINT", "COOKTOP GREY ENAMEL", "COOKTOP INOX", "COOKTOP AND COMMAND PANEL INOX", "GOLD","CUPPER", "TDF", "NO INFO")
 
-fModel = Right(Split(Format.BaseName, "_")(1), 1) 
+fModel = Right(Split(Format.BaseName, "_")(x), 1) 
 
 For Each sayi in range(0, LenA(ColorCode))
 
