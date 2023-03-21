@@ -996,3 +996,23 @@ Function arrayRev(array)
 	arrayRev = ArrayN
 
 End Function
+
+Function stan_degis(x, y)
+	stan0 = "EN 30-1-1+A3/2013, IEC 60335-1, IEC 60335-2-102, IEC 60335-2-6"
+	stan1 = "IEC 60335-1, IEC 60335-2-6"
+	stan2 = "EN 30-1-1+A3/2013, IEC 60335-1, IEC 60335-2-102, IEC 60335-2-9"
+	If x = 0 And y = 1 Then
+		Value = Replace(stan0, "IEC", "EN")
+	ElseIf x = 1 And y = 1 Then
+		Value = Replace(stan1, "IEC", "EN")		
+	ElseIf x = 1 And y = 0 Then
+		Value = stan1		
+	ElseIf x = 2 And y = 1 Then
+		Value = Replace(stan2, "IEC", "EN")		
+	ElseIf x = 2 And y = 0 Then
+		Value = stan2		
+	Else
+		Value = stan0
+	End If
+	degis = Value
+End Function
