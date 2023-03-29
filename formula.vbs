@@ -1019,3 +1019,9 @@ Function stan_degis(x, y)
 	End If
 	degis = Value
 End Function
+
+Function arrayRevAndJoin(x, y, z)
+	arr = Split(x, y)
+	arrRe = arrayRev(arr)
+	arrayRevAndJoin = Join(arrRe, z)
+End Function 
