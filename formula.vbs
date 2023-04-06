@@ -1017,7 +1017,7 @@ Function stan_degis(x, y)
 	Else
 		Value = stan0
 	End If
-	degis = Value
+	stan_degis = Value
 End Function
 
 Function arrayRevAndJoin(x, y, z)
