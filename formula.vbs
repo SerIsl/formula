@@ -611,6 +611,25 @@ Function wattHesapla(x)
 	    End If	
             wattHesapla = TotalDizi
 
+        case 5
+            dizi1 = Split(TopkWatt, vbCr) 
+            dizi2 = Split(OvenkWatt9020, vbCr)
+            
+		'If LenA(dizi2) > 1 Then
+        '    ReDim TotalDizi(LenA(dizi1)+LenA(dizi2)-2)
+		'Else
+		    ReDim TotalDizi(LenA(dizi1)+LenA(dizi2)-1)
+		'<End If
+
+            For Each i in range(0, LenA(TotalDizi))
+                If  i < LenA(dizi1) Then
+                    TotalDizi(i) = dizi1(i)
+                Else
+                    TotalDizi(i) = dizi2(i-lenA(dizi1))
+                End If
+            Next
+            wattHesapla = TotalDizi 
+
     End Select 
 
 End Function    
