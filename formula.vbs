@@ -542,21 +542,31 @@ End Function
 
 Function wattHesapla(x)
 
+    Oven = OvenkWatt
+    Top = TopkWatt
 
+    If  UBound(x) = 1 and x(0) = 3 then
+        Top = x(1)
+
+    ElseIf UBound(x) = 1 and x(0) = 4 then
+        Top = x(1)
+    ElseIf UBound(x) = 1 and x(0) = 5 then
+        Oven = x(1)
+    End If
 
     Dim dizi1, dizi2, TotalDizi, tmpD
 
-    Select Case x
+    Select Case x(0)
         case 0 
-	    If Len(OvenkWatt) > 0 Then
-	        TotalDizi = Split(OvenkWatt, vbCr)
+	    If Len(Oven) > 0 Then
+	        TotalDizi = Split(Oven, vbCr)
             Else 
-            	TotalDizi = Split(TopkWatt, vbCr)
+            	TotalDizi = Split(Top, vbCr)
 	    End If	
             wattHesapla = TotalDizi
         case 1
-            dizi1 = Split(TopkWatt, vbCr) 
-            dizi2 = Split(OvenkWatt, vbCr)
+            dizi1 = Split(Top, vbCr) 
+            dizi2 = Split(Oven, vbCr)
 		If LenA(dizi2) > 1 Then
             	    ReDim TotalDizi(LenA(dizi1)+LenA(dizi2)-2)
 		Else
@@ -572,8 +582,8 @@ Function wattHesapla(x)
             Next
             wattHesapla = TotalDizi
         case 2 
-            dizi1 = Split(TopkWatt, vbCr) 
-            dizi2 = Split(OvenkWatt, vbCr)
+            dizi1 = Split(Top, vbCr) 
+            dizi2 = Split(Oven, vbCr)
             ReDim TotalDizi(LenA(dizi1)+LenA(dizi2)-1)
 
             For Each i in range(0, LenA(TotalDizi))
@@ -586,8 +596,8 @@ Function wattHesapla(x)
             wattHesapla = TotalDizi
 
         case 3
-            dizi1 = Split(TopkWatt25, vbCr) 
-            dizi2 = Split(OvenkWatt, vbCr)
+            dizi1 = Split(Top, vbCr) 
+            dizi2 = Split(Oven, vbCr)
 		If LenA(dizi2) > 1 Then
             	    ReDim TotalDizi(LenA(dizi1)+LenA(dizi2)-2)
 		Else
@@ -605,15 +615,15 @@ Function wattHesapla(x)
         
         case 4 
 	    If Len(OvenkWatt) > 0 Then
-	        TotalDizi = Split(OvenkWatt, vbCr)
+	        TotalDizi = Split(Oven, vbCr)
             Else 
-            	TotalDizi = Split(TopkWatt25, vbCr)
+            	TotalDizi = Split(Top, vbCr)
 	    End If	
             wattHesapla = TotalDizi
 
         case 5
-            dizi1 = Split(TopkWatt, vbCr) 
-            dizi2 = Split(OvenkWatt9020, vbCr)
+            dizi1 = Split(Top, vbCr) 
+            dizi2 = Split(Oven, vbCr)
             
 		'If LenA(dizi2) > 1 Then
         '    ReDim TotalDizi(LenA(dizi1)+LenA(dizi2)-2)
