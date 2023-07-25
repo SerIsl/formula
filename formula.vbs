@@ -1054,3 +1054,10 @@ Function arrayRevAndJoin(x, y, z)
 	arrRe = arrayRev(arr)
 	arrayRevAndJoin = Join(arrRe, z)
 End Function 
+
+Function certi(x)
+
+	Value = "Certigaz Notified Body 1312, UE 2016/426, Certificate 5268-" & x & ", 1312BT5268"
+	certi = "Certigaz Notified Body 1312, UE 2016/426, Certificate 5268-" & x & ", 1312BT5268"
+    
+End Function
