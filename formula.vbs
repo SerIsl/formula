@@ -1057,7 +1057,40 @@ End Function
 
 Function certi(x)
 
-	Value = "Certigaz Notified Body 1312, UE 2016/426, Certificate 5268-" & x & ", 1312BT5268"
-	certi = "Certigaz Notified Body 1312, UE 2016/426, Certificate 5268-" & x & ", 1312BT5268"
+    a = Split((Split(Format.Directory,"\")(7)),"-")(0)
+	
+	If a = "HOFFMANN" Then
+
+		harf = "H"
+
+	ElseIf a = "DIXI" Then
+	
+		harf = "A"
+
+	ElseIf a = "MILLEN" Then
+	
+		harf = "C"
+
+	ElseIf a = "DIAMOND" Then
+	
+		harf = "D"
+	
+	ElseIf a = "EXCELLENCE" Then
+	
+		harf = "E"
+
+	ElseIf a = "GEOLUX" Then
+	
+		harf = "F"
+
+	ElseIf a = "ITALUX" Then
+	
+		harf = "G"
+	
+	End If
+
+
+	Value = "Certigaz Notified Body 1312, UE 2016/426, Certificate 5268-" & harf & ", 1312BT5268"
+	certi = "Certigaz Notified Body 1312, UE 2016/426, Certificate 5268-" & harf & ", 1312BT5268"
     
 End Function
