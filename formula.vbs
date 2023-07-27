@@ -83,7 +83,7 @@ Function getNum(num1)
 
 End Function
 
-Sub getName
+Function getName()
 	Dim x
 
 	x=Split(Format.BaseName,"_")
@@ -104,7 +104,9 @@ Sub getName
 	fModel = x(2)
 	Value = x(1)
 	End If
-End Sub
+
+    getname = x(0)
+End Function
 
 Function Dimension(X)
 	Dim a, koli, b, koli_tipi, c, d
@@ -1093,4 +1095,14 @@ Function certi(x)
 	Value = "Certigaz Notified Body 1312, UE 2016/426, Certificate 5268-" & harf & ", 1312BT5268"
 	certi = "Certigaz Notified Body 1312, UE 2016/426, Certificate 5268-" & harf & ", 1312BT5268"
     
+End Function
+
+Function dizial(x, y)
+	Dim dizix()
+	Redim dizix(y)
+
+	For Each i in range(0, y)
+		dizix(i) = x(i)
+	Next
+	dizial = dizix	
 End Function
