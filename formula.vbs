@@ -88,23 +88,6 @@ Function getName()
 
 	x=Split(Format.BaseName,"_")
 
-	If Ubound(x)>4 Then 
-	Value = x(1)
-	fModel = x(2)
-	EAN = x(Ubound(x)-1)
-		If Ubound(x)=6 Then
-			Code = x(Ubound(x)-2)
-		End If
-	ElseIf Ubound(x)=4 AND IsNumeric(x(Ubound(x)-1)) AND Len(x(Ubound(x)-1))>11 OR Ubound(x)=2 Then 
-	Value = x(1)
-	fModel = "Gerek Yok!"
-	EAN = x(Ubound(x)-1)
-	Else
-	EAN = x(Ubound(x)-1)
-	fModel = x(2)
-	Value = x(1)
-	End If
-
     getname = x(0)
 End Function
 
