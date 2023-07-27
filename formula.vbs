@@ -1082,9 +1082,9 @@ End Function
 
 Function dizial(x, y)
 	Dim dizix()
-	Redim dizix(y)
+	Redim dizix(y-1)
 
-	For Each i in range(0, y)
+	For i=0 to y-1
 		dizix(i) = x(i)
 	Next
 	dizial = dizix	
