@@ -157,7 +157,7 @@ Function Dimension(X)
                     case 6 
                         b = "615x670x883"
                     case 9
-                        b = "905*650*810"
+                        b = "963x693x865"
                 End Select 
 
             End If
