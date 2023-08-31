@@ -862,6 +862,7 @@ For Each sayi in range(0, LenA(ColorCode))
 
 	If ColorCode(sayi) = fModel Then
 		Value = Colorname(sayi)
+        'ColorName = Colorname(sayi)
 
 	End If
 
@@ -1088,4 +1089,27 @@ Function dizial(x, y)
 		dizix(i) = x(i)
 	Next
 	dizial = dizix	
+End Function
+
+
+Function ColorName1(x)
+
+Dim ColorCode, Colorname, fModel
+
+ColorCode = Array("W", "B", "G", "K", "S", "M", "Y", "R", "C", "D", "P", "A", "V", "L", "H", "E", "U", "I", "F", "J", "N", "O", "T", "X", "x", "v", "a", "f", "h", "b", "k", "s","e", "j", "k", "g", "c", "t", "Z")
+
+Colorname = Array("WHITE", "BLACK", "GREY (METALLIC)", "BROWN", "INOX BRIGHT", "INOX MATT", "GREEN", "RED", "BEIGE", "MATT BLACK", "PINK", "ANTRACIT", "BLUE", "WOODEN DESIGN","HALF INOX", "COOKTOP MATT BLACK", "COOKTOP BLACK", "COOKTOP MIRRORED BLACK", "BRIGHT BLACK", "LIGHT YELLOW", "YELLOW", "ORANGE", "TURQUAZ", "DARK RED", "BRIGHT RED", "OCEAN BLUE", "MATT ANTRACIT", "FULL INOX", "HALF INOX", "DARK BLUE", "BEIGE PAINT", "SILVER GREY PAINT", "COOKTOP GREY ENAMEL", "COOKTOP INOX", "COOKTOP AND COMMAND PANEL INOX", "GOLD","CUPPER", "TDF", "NO INFO")
+
+fModel = Right(Split(Format.BaseName, "_")(x), 1) 
+
+For Each sayi in range(0, LenA(ColorCode))
+
+	If ColorCode(sayi) = fModel Then
+		Value = Colorname(sayi)
+        ColorName1 = Colorname(sayi)
+
+	End If
+
+Next
+
 End Function
