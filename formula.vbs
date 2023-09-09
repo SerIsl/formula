@@ -778,6 +778,12 @@ Dim fark, serinoEsas, barkot
 barkot = CInt(Right(barCode, 4))
 fark = SeriNoSon - adet
 serinoEsas = barkot + fark
+If serinoEsas < 0 Then
+
+    serinoEsas = 0
+
+End If
+
 Select Case basamak
 
     case 3
