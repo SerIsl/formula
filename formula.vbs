@@ -773,7 +773,7 @@ End Select
 Value = result
 End Function
 
-Sub seriNo(SeriNoSon, adet, basamak)
+Function seriNo(SeriNoSon, adet, basamak)
 Dim fark, serinoEsas, barkot
 barkot = CInt(Right(barCode, 4))
 fark = SeriNoSon - adet
@@ -851,7 +851,9 @@ Select Case basamak
 
 End Select
 
-End Sub
+seriNo = serinoEsas
+
+End Function
 
 
 Sub ColorName(x)
