@@ -1080,6 +1080,10 @@ Function certi(x)
 	ElseIf a = "ITALUX" Then
 	
 		harf = "G"
+
+    ElseIf a = "ALNEO" Then
+
+        harf = "I"
 	
 	End If
 
