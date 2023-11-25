@@ -948,6 +948,9 @@ Sub firinolcusu2(modele)
             Else
                 Value = "50x50"
             End If
+
+        case "B"
+            Value = "60CM"
 	End Select
 
 End Sub
