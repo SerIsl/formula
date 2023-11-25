@@ -917,15 +917,38 @@ End Sub
 
 Sub firinolcusu2(modele)
 
-	If CInt(Mid(modele, 3, 1)) = 6 Then
-		Value = "60x60"
-	ElseIf CInt(Mid(modele, 3, 1)) = 5 Then
-		Value = "50x60"
-    ElseIf CInt(Mid(modele, 3, 1)) = 9 Then
-		Value = "90x60"
-	Else
-		Value = "50x50"
-	End If
+    a = Mid(Modele, 1, 1)
+
+    If a = "V" or a = "D" Then
+
+        a = "F"
+
+    End If
+
+    Select Case Mid(Modele, 1, 1)
+
+        case "H"
+            If CInt(Mid(modele, 3, 1)) = 3 Then
+                Value = "30CM"
+            ElseIf CInt(Mid(modele, 3, 1)) = 6 Then
+                Value = "60CM"
+            ElseIf CInt(Mid(modele, 3, 1)) = 9 Then
+                Value = "90CM"
+            ElseIf CInt(Mid(modele, 3, 1)) = 7 Then
+                Value = "70CM"
+            End If
+
+        case "F"
+            If CInt(Mid(modele, 3, 1)) = 6 Then
+                Value = "60x60"
+            ElseIf CInt(Mid(modele, 3, 1)) = 5 Then
+                Value = "50x60"
+            ElseIf CInt(Mid(modele, 3, 1)) = 9 Then
+                Value = "90x60"
+            Else
+                Value = "50x50"
+            End If
+	End Select
 
 End Sub
 
