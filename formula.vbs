@@ -206,7 +206,7 @@ Sub getName1
             
         ElseIf Ubound(x) = 4 Then
             Code = x(Ubound(x)-2)
-            fModel = "Gerek Yok!"         
+            fModel = x(1)         
 		End If
 	ElseIf Ubound(x)=3 AND EAN_kontrol(x(Ubound(x)-1)) OR Ubound(x)=2 Then 
 	Value = x(0)
