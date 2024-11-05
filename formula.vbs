@@ -925,7 +925,7 @@ Sub firinolcusu2(modele)
 
     End If
 
-    Select Case Mid(Modele, 1, 1)
+    Select Case a
 
         case "H"
             If CInt(Mid(modele, 3, 1)) = 3 Then
